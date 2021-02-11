@@ -1,7 +1,11 @@
 package com.matan.mongoredis.mongorediscache.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,11 +13,17 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Event {
+@Document
+public class Event implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int reporterId;
 	private Date timestamp;
+	@Indexed
 	private int metricId;
 	private int metricValue;
 	private String message;
