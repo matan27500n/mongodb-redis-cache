@@ -30,8 +30,8 @@ public class EventResource {
 
 	@GetMapping("getOneEvent/{reporterId}")
 	@Cacheable(value = "event", key = "#reporterId", condition = "#reporterId > 0")
-	public Event getOneEvent(@PathVariable int reporterId) {
-		return eventService.getOneEvent(reporterId);
+	public void getOneEvent(@PathVariable int reporterId) {
+		eventService.getOneEvent(reporterId);
 	}
 
 	@GetMapping("getAllEvents")

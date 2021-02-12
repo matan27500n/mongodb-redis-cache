@@ -3,7 +3,6 @@ package com.matan.mongoredis.mongorediscache.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.matan.mongoredis.mongorediscache.model.Event;
 import com.matan.mongoredis.mongorediscache.repo.EventRepository;
 
